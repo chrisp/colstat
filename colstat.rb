@@ -1,49 +1,44 @@
+#! /usr/bin/env ruby
 require 'bundler/setup'
 require 'crack'
 require 'httparty'
 require 'pp'
 require 'yaml'
+require 'active_model'
 require 'pry'
 
-dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
-keys = YAML.load_file('keys.yml')
+dir = File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
+require "#{dir}/eve_api"
+require "#{dir}/colony"
+require "#{dir}/capsuleer"
 
-class Character
-  include HTTParty
-  attr_accessor :character_id, :key_id, :vcode, :colonies, :response, :url
+def run_report
+  capsuleers = []
+  keys = YAML.load_file('keys.yml')
 
-  parser(
-    Proc.new do |body, format|
-      Crack::XML.parse(body)
+  keys.each do |key|
+    capsuleers << Capsuleer.new(key['id'], key['key_id'], key['vcode'])
+  end
+
+  capsuleers.each do |capsuleer|
+    puts "Capsuleer id: #{capsuleer.id}"
+    puts "Colony_Data: #{capsuleer.colony_data.to_yaml}"
+
+    capsuleer.colonies.each do |colony|
+      puts "Colony #{colony.id}"
+      colony.pin_data.each do |pin|
+        puts "pin #{pin['typeName']} #{pin['schematicID']} #{pin['expiryTime']}"
+      end
+
+      colony.link_data.each do |link|
+        puts "link #{link.inspect}"
+      end
+
+      colony.route_data.each do |route|
+        puts "route #{route['routeID']}"
+      end
     end
-  )
-  
-  def initialize(character_id, key_id, vcode)
-    self.character_id = character_id
-    self.key_id = key_id
-    self.vcode = vcode
-
-    raise "missing args" unless [character_id, key_id, vcode].all?
-
-    begin
-      self.url = "https://api.eveonline.com/char/PlanetaryColonies.xml.aspx?characterID=#{character_id}&keyID=#{key_id}&vCode=#{vcode}"
-      self.response = Character.get(url)
-
-      self.colonies = response["eveapi"]["result"]["rowset"]["row"]
-    rescue
-      binding.pry
-    end
-    self
   end
 end
 
-characters = []
-keys.each do |key|
-  characters << Character.new(key['character_id'], key['key_id'], key['vcode'])
-end
-
-characters.each do |character|
-  puts "Capsuleer id: #{character.character_id}"
-  puts "Colonies: #{character.colonies.to_yaml}"
-end
-
+run_report
