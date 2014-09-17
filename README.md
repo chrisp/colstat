@@ -1,8 +1,5 @@
-colstat
-=======
-
-# EVE API tool
-Lists colony data for sets of capsuleers
+# COLSTAT
+EVE Planetary Interaction API tool.  Lists colony data for sets of capsuleers
 
 ## Setup/Run
 ```bash
