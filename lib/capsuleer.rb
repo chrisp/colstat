@@ -4,7 +4,8 @@ class Capsuleer
                 :colony_data, 
                 :response, 
                 :url, 
-                :colonies
+                :colonies,
+                :name
 
   def initialize(new_eve_api)
     self.id = new_eve_api.capsuleer_id
@@ -23,11 +24,13 @@ class Capsuleer
     self.colonies = []
 
     if colony_data.is_a?(Array)
+      self.name = colony_data[0]['ownerName']
       colony_data.each do |colony|
-        colonies << Colony.new(colony["planetID"], eve_api)
+        colonies << Colony.new(colony, eve_api)
       end
     else
-      colonies << Colony.new(colony_data["planetID"], eve_api)
+      self.name = colony_data['ownerName']
+      colonies << Colony.new(colony_data, eve_api)
     end
 
     self

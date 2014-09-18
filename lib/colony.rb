@@ -1,5 +1,6 @@
 class Colony
   attr_accessor :id, 
+                :name, 
                 :eve_api, 
                 :response, 
                 :url, 
@@ -7,8 +8,9 @@ class Colony
                 :link_data, 
                 :route_data
 
-  def initialize(planet_id, new_eve_api)
-    self.id = planet_id
+  def initialize(colony, new_eve_api)
+    self.id = colony['planetID'] 
+    self.name = colony['planetName']
     self.eve_api = new_eve_api
 
     base_url = "https://api.eveonline.com"

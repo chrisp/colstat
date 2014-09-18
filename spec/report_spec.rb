@@ -16,6 +16,7 @@ describe Report do
       result = subject.products_by_colony
       expect(result).to_not be_nil
       expect(result).to_not be_empty
+      puts result
     end
   end
 end
