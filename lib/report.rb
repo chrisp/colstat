@@ -18,9 +18,8 @@ class Report
       capsuleer.colonies.each do |colony|
         report_text += "#{colony.name}\t"
 
-        colony.pin_data.each do |pin|
-          report_text += "#{pin['schematicID']}\t"
-        end
+        pins = colony.pin_data.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
+        pins.each { |pin| report_text += "#{pin}\t" }
         
         report_text += "\n"
       end
