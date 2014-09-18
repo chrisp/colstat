@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <eveapi version="2">
-  <currentTime>2014-09-18 19:16:27</currentTime>
+  <currentTime>2014-09-18 19:59:33</currentTime>
   <result>
     <rowset name="pins" key="pinID" columns="pinID,typeID,typeName,schematicID,lastLaunchTime,cycleTime,quantityPerCycle,installTime,expiryTime,contentTypeID,contentTypeName,contentQuantity,longitude,latitude">
       <row pinID="1015049581566" typeID="2551" typeName="Plasma Command Center" schematicID="0" lastLaunchTime="0001-01-01 00:00:00" cycleTime="0" quantityPerCycle="0" installTime="0001-01-01 00:00:00" expiryTime="0001-01-01 00:00:00" contentTypeID="0" contentTypeName="" contentQuantity="0" longitude="-2.64138929814089" latitude="0.89536953258503" />
@@ -17,5 +17,5 @@
       <row pinID="1015959181521" typeID="3064" typeName="Plasma Extractor Control Unit" schematicID="0" lastLaunchTime="0001-01-01 00:00:00" cycleTime="60" quantityPerCycle="13229" installTime="2014-09-18 04:52:51" expiryTime="2014-09-21 04:52:51" contentTypeID="0" contentTypeName="" contentQuantity="0" longitude="-2.88316285721256" latitude="1.30371946675939" />
     </rowset>
   </result>
-  <cachedUntil>2014-09-18 20:16:27</cachedUntil>
+  <cachedUntil>2014-09-18 20:59:33</cachedUntil>
 </eveapi>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-09-18 19:59:34</currentTime>
+  <result>
+    <rowset name="links" key="sourcePinID" columns="sourcePinID,destinationPinID,linkLevel">
+      <row sourcePinID="1015568793003" destinationPinID="1015568798253" linkLevel="0" />
+      <row sourcePinID="1015568793003" destinationPinID="1015568798255" linkLevel="0" />
+      <row sourcePinID="1015568793003" destinationPinID="1015568803907" linkLevel="0" />
+      <row sourcePinID="1015568793003" destinationPinID="1015568803909" linkLevel="0" />
+      <row sourcePinID="1015568793003" destinationPinID="1015959181521" linkLevel="0" />
+      <row sourcePinID="1015568798253" destinationPinID="1015568809040" linkLevel="0" />
+      <row sourcePinID="1015568798255" destinationPinID="1015568809042" linkLevel="0" />
+      <row sourcePinID="1015568803907" destinationPinID="1015568809043" linkLevel="0" />
+      <row sourcePinID="1015568803909" destinationPinID="1015568809044" linkLevel="0" />
+      <row sourcePinID="1015568809044" destinationPinID="1015568813172" linkLevel="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-09-18 20:59:34</cachedUntil>
+</eveapi>

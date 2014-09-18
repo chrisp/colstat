@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-09-18 19:59:42</currentTime>
+  <result>
+    <rowset name="links" key="sourcePinID" columns="sourcePinID,destinationPinID,linkLevel">
+      <row sourcePinID="1015327984364" destinationPinID="1015327986443" linkLevel="0" />
+      <row sourcePinID="1015327986443" destinationPinID="1015327987221" linkLevel="0" />
+      <row sourcePinID="1015327987221" destinationPinID="1015327990421" linkLevel="0" />
+      <row sourcePinID="1015327990421" destinationPinID="1015327993986" linkLevel="0" />
+      <row sourcePinID="1015327990421" destinationPinID="1015327996245" linkLevel="1" />
+      <row sourcePinID="1015327990421" destinationPinID="1015327997055" linkLevel="0" />
+      <row sourcePinID="1015327990421" destinationPinID="1015328000422" linkLevel="0" />
+      <row sourcePinID="1015327990421" destinationPinID="1015328001610" linkLevel="0" />
+      <row sourcePinID="1015327990421" destinationPinID="1015328002764" linkLevel="0" />
+      <row sourcePinID="1015327990421" destinationPinID="1015328005115" linkLevel="0" />
+      <row sourcePinID="1015327990421" destinationPinID="1015929611379" linkLevel="0" />
+      <row sourcePinID="1015327993986" destinationPinID="1015365178532" linkLevel="0" />
+      <row sourcePinID="1015327996245" destinationPinID="1015383302875" linkLevel="1" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-09-18 20:59:42</cachedUntil>
+</eveapi>

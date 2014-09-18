@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-09-18 19:59:43</currentTime>
+  <result>
+    <rowset name="routes" key="routeID" columns="routeID,sourcePinID,destinationPinID,contentTypeID,contentTypeName,quantity,waypoint1,waypoint2,waypoint3,waypoint4,waypoint5">
+      <row routeID="612209107" sourcePinID="1015327986443" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="1015327987221" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209094" sourcePinID="1015327987221" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209119" sourcePinID="1015327990421" destinationPinID="1015327996245" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209128" sourcePinID="1015327990421" destinationPinID="1015328005115" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209139" sourcePinID="1015327990421" destinationPinID="1015327993986" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209148" sourcePinID="1015327990421" destinationPinID="1015328002764" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209176" sourcePinID="1015327990421" destinationPinID="1015327997055" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209188" sourcePinID="1015327990421" destinationPinID="1015328001610" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209199" sourcePinID="1015327990421" destinationPinID="1015327987221" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209208" sourcePinID="1015327990421" destinationPinID="1015327986443" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="1015327987221" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209217" sourcePinID="1015327990421" destinationPinID="1015328000422" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612951455" sourcePinID="1015327990421" destinationPinID="1015365178532" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="1015327993986" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209009" sourcePinID="1015327993986" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209062" sourcePinID="1015327996245" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209039" sourcePinID="1015327997055" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209075" sourcePinID="1015328000422" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209047" sourcePinID="1015328001610" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612209036" sourcePinID="1015328002764" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612208994" sourcePinID="1015328005115" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612951435" sourcePinID="1015365178532" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="1015327993986" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="624783427" sourcePinID="1015929611379" destinationPinID="1015327990421" contentTypeID="2267" contentTypeName="Base Metals" quantity="101920" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="613313712" sourcePinID="1015383302875" destinationPinID="1015327990421" contentTypeID="2398" contentTypeName="Reactive Metals" quantity="20" waypoint1="1015327996245" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="613313699" sourcePinID="1015327990421" destinationPinID="1015383302875" contentTypeID="2267" contentTypeName="Base Metals" quantity="3000" waypoint1="1015327996245" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-09-18 20:59:43</cachedUntil>
+</eveapi>

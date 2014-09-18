@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-09-18 19:59:38</currentTime>
+  <result>
+    <rowset name="routes" key="routeID" columns="routeID,sourcePinID,destinationPinID,contentTypeID,contentTypeName,quantity,waypoint1,waypoint2,waypoint3,waypoint4,waypoint5">
+      <row routeID="612211439" sourcePinID="1015328142804" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="1015328143953" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211411" sourcePinID="1015328143953" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211445" sourcePinID="1015328152821" destinationPinID="1015328143953" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211453" sourcePinID="1015328152821" destinationPinID="1015328142804" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="1015328143953" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211459" sourcePinID="1015328152821" destinationPinID="1015328157598" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211470" sourcePinID="1015328152821" destinationPinID="1015328157594" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211474" sourcePinID="1015328152821" destinationPinID="1015328157601" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211483" sourcePinID="1015328152821" destinationPinID="1015328157596" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211492" sourcePinID="1015328152821" destinationPinID="1015328157600" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211497" sourcePinID="1015328152821" destinationPinID="1015328157593" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211501" sourcePinID="1015328152821" destinationPinID="1015328157595" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="613313226" sourcePinID="1015328152821" destinationPinID="1015383283471" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="3000" waypoint1="1015328157596" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211419" sourcePinID="1015328157593" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211390" sourcePinID="1015328157594" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211429" sourcePinID="1015328157595" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211363" sourcePinID="1015328157596" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211398" sourcePinID="1015328157598" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211347" sourcePinID="1015328157600" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612211374" sourcePinID="1015328157601" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="613313213" sourcePinID="1015383283471" destinationPinID="1015328152821" contentTypeID="2400" contentTypeName="Toxic Metals" quantity="20" waypoint1="1015328157596" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="625192156" sourcePinID="1015959164975" destinationPinID="1015328152821" contentTypeID="2272" contentTypeName="Heavy Metals" quantity="113132" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-09-18 20:59:38</cachedUntil>
+</eveapi>

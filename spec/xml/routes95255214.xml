@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-09-18 19:59:35</currentTime>
+  <result>
+    <rowset name="routes" key="routeID" columns="routeID,sourcePinID,destinationPinID,contentTypeID,contentTypeName,quantity,waypoint1,waypoint2,waypoint3,waypoint4,waypoint5">
+      <row routeID="617017975" sourcePinID="1015568793003" destinationPinID="1015568803909" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617018007" sourcePinID="1015568793003" destinationPinID="1015568809044" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="1015568803909" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617018035" sourcePinID="1015568793003" destinationPinID="1015568813172" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="1015568803909" waypoint2="1015568809044" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617018053" sourcePinID="1015568793003" destinationPinID="1015568803907" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617018069" sourcePinID="1015568793003" destinationPinID="1015568809043" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="1015568803907" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617018160" sourcePinID="1015568793003" destinationPinID="1015568798253" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617018198" sourcePinID="1015568793003" destinationPinID="1015568809040" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="1015568798253" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617018401" sourcePinID="1015568793003" destinationPinID="1015568809042" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="1015568798255" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617018425" sourcePinID="1015568793003" destinationPinID="1015568798255" contentTypeID="2270" contentTypeName="Noble Metals" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017947" sourcePinID="1015568813172" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="1015568809044" waypoint2="1015568803909" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="625192692" sourcePinID="1015959181521" destinationPinID="1015568793003" contentTypeID="2270" contentTypeName="Noble Metals" quantity="95248" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017910" sourcePinID="1015568809044" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="1015568803909" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017765" sourcePinID="1015568809043" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="1015568803907" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017844" sourcePinID="1015568809042" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="1015568798255" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017647" sourcePinID="1015568809040" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="1015568798253" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017888" sourcePinID="1015568803909" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017734" sourcePinID="1015568803907" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017809" sourcePinID="1015568798255" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="617017672" sourcePinID="1015568798253" destinationPinID="1015568793003" contentTypeID="2399" contentTypeName="Precious Metals" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-09-18 20:59:35</cachedUntil>
+</eveapi>

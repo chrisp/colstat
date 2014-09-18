@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-09-18 19:59:45</currentTime>
+  <result>
+    <rowset name="routes" key="routeID" columns="routeID,sourcePinID,destinationPinID,contentTypeID,contentTypeName,quantity,waypoint1,waypoint2,waypoint3,waypoint4,waypoint5">
+      <row routeID="612204087" sourcePinID="1015327661814" destinationPinID="1015327677760" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612204111" sourcePinID="1015327661814" destinationPinID="1015327670552" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612204123" sourcePinID="1015327661814" destinationPinID="1015327678546" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612210354" sourcePinID="1015327661814" destinationPinID="1015327658199" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612210388" sourcePinID="1015327661814" destinationPinID="1015327658198" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="1015327658199" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="613313444" sourcePinID="1015327661814" destinationPinID="1015383292117" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="1015327670552" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="613313429" sourcePinID="1015383292117" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="1015327670552" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="625191363" sourcePinID="1015959134262" destinationPinID="1015327661814" contentTypeID="2073" contentTypeName="Microorganisms" quantity="134316" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612950771" sourcePinID="1015365152389" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="1015327673554" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203869" sourcePinID="1015327680132" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203908" sourcePinID="1015327679334" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203985" sourcePinID="1015327678546" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203899" sourcePinID="1015327674699" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203837" sourcePinID="1015327673554" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203953" sourcePinID="1015327670552" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612950784" sourcePinID="1015327661814" destinationPinID="1015365152389" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="1015327673554" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612204078" sourcePinID="1015327661814" destinationPinID="1015327673554" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612204057" sourcePinID="1015327661814" destinationPinID="1015327680132" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612204021" sourcePinID="1015327661814" destinationPinID="1015327674699" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612204004" sourcePinID="1015327661814" destinationPinID="1015327679334" contentTypeID="2073" contentTypeName="Microorganisms" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203922" sourcePinID="1015327658199" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203936" sourcePinID="1015327658198" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="1015327658199" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612203819" sourcePinID="1015327677760" destinationPinID="1015327661814" contentTypeID="2393" contentTypeName="Bacteria" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-09-18 20:59:45</cachedUntil>
+</eveapi>

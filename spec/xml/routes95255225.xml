@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-09-18 19:59:40</currentTime>
+  <result>
+    <rowset name="routes" key="routeID" columns="routeID,sourcePinID,destinationPinID,contentTypeID,contentTypeName,quantity,waypoint1,waypoint2,waypoint3,waypoint4,waypoint5">
+      <row routeID="612205448" sourcePinID="1015327752333" destinationPinID="1015327757784" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205473" sourcePinID="1015327752333" destinationPinID="1015327760799" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205486" sourcePinID="1015327752333" destinationPinID="1015327756021" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205513" sourcePinID="1015327752333" destinationPinID="1015327760800" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205529" sourcePinID="1015327752333" destinationPinID="1015327758337" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205542" sourcePinID="1015327752333" destinationPinID="1015327763166" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205564" sourcePinID="1015327752333" destinationPinID="1015327757120" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205586" sourcePinID="1015327752333" destinationPinID="1015327763165" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612952323" sourcePinID="1015327752333" destinationPinID="1015365215497" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="1015327757120" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205412" sourcePinID="1015327756021" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205325" sourcePinID="1015327757120" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205273" sourcePinID="1015327757784" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205382" sourcePinID="1015327758337" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205431" sourcePinID="1015327760799" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205389" sourcePinID="1015327760800" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205302" sourcePinID="1015327763165" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612205339" sourcePinID="1015327763166" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="0" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="625191770" sourcePinID="1015327768454" destinationPinID="1015327752333" contentTypeID="2310" contentTypeName="Noble Gas" quantity="113680" waypoint1="1015327757784" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612239644" sourcePinID="1015329833684" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="1015327758337" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612952311" sourcePinID="1015365215497" destinationPinID="1015327752333" contentTypeID="3683" contentTypeName="Oxygen" quantity="20" waypoint1="1015327757120" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+      <row routeID="612239681" sourcePinID="1015327752333" destinationPinID="1015329833684" contentTypeID="2310" contentTypeName="Noble Gas" quantity="3000" waypoint1="1015327758337" waypoint2="0" waypoint3="0" waypoint4="0" waypoint5="0" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-09-18 20:59:40</cachedUntil>
+</eveapi>
