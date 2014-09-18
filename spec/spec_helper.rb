@@ -5,6 +5,7 @@ require 'httparty'
 require "#{libdir}/eve_api"
 require "#{libdir}/capsuleer"
 require "#{libdir}/colony"
+require "#{libdir}/report"
 require 'pry'
 require 'webmock/rspec'
 
