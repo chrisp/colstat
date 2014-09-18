@@ -1,30 +1,28 @@
 class Capsuleer
-  attr_accessor :id, :key_id, :vcode, :colony_data, :response, :url, :colonies
+  attr_accessor :id, :eve_api, :colony_data, :response, :url, :colonies
 
-  def initialize(cap_id, new_key_id, new_vcode)
-    self.id = cap_id
-    self.key_id = new_key_id
-    self.vcode = new_vcode
+  def initialize(new_eve_api)
+    self.id = new_eve_api.capsuleer_id
+    self.eve_api = new_eve_api
 
-    raise "Capsuleer#initialize: missing args" unless [id, key_id, vcode].all?
+    raise "Capsuleer#initialize: missing args" unless [id, new_eve_api].all?
 
-    begin
-      self.url = "https://api.eveonline.com/char/PlanetaryColonies.xml.aspx?characterID=#{id}&keyID=#{key_id}&vCode=#{vcode}"
-      self.response = EveApi.get(url)
+    base_path = "https://api.eveonline.com/char/PlanetaryColonies.xml.aspx"
+    self.url = "#{base_path}?characterID=#{id}&keyID=#{eve_api.key_id}" + 
+      "&vCode=#{eve_api.vcode}"
+    self.response = EveApi.get(url)
 
-      self.colony_data = response["eveapi"]["result"]["rowset"]["row"]
-      self.colonies = []
+    self.colony_data = response["eveapi"]["result"]["rowset"]["row"]
+    self.colonies = []
 
-      if colony_data.is_a?(Array)
-        colony_data.each do |colony|
-          colonies << Colony.new(colony["planetID"], id, key_id, vcode)
-        end
-      else
-        colonies << Colony.new(colony_data["planetID"], id, key_id, vcode)
+    if colony_data.is_a?(Array)
+      colony_data.each do |colony|
+        colonies << Colony.new(colony["planetID"], id, eve_api.key_id, eve_api.vcode)
       end
-    rescue Exception => e
-      binding.pry
+    else
+      colonies << Colony.new(colony_data["planetID"], id, eve_api.key_id, eve_api.vcode)
     end
+
     self
   end
 end

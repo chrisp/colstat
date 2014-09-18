@@ -7,17 +7,17 @@ require 'yaml'
 require 'active_model'
 require 'pry'
 
-dir = File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
-require "#{dir}/eve_api"
-require "#{dir}/colony"
-require "#{dir}/capsuleer"
+libdir = File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
+require "#{libdir}/eve_api"
+require "#{libdir}/colony"
+require "#{libdir}/capsuleer"
 
 def run_report
   capsuleers = []
   keys = YAML.load_file('keys.yml')
 
   keys.each do |key|
-    capsuleers << Capsuleer.new(key['id'], key['key_id'], key['vcode'])
+    capsuleers << Capsuleer.new(EveApi.new(key['id'], key['key_id'], key['vcode']))
   end
 
   capsuleers.each do |capsuleer|

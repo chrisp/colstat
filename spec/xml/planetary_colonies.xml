@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<eveapi version="2">
+  <currentTime>2014-09-18 17:31:09</currentTime>
+  <result>
+    <rowset name="colonies" key="planetID" columns="solarSystemID,solarSystemName,planetID,planetName,planetTypeID,planetTypeName,ownerID,ownerName,lastUpdate,upgradeLevel,numberOfPins">
+      <row solarSystemID="31000090" solarSystemName="New Eden" planetID="95255214" planetName="New Eden I" planetTypeID="2063" planetTypeName="Planet (Plasma)" ownerID="98678321" ownerName="Bobby McBlueShoot" lastUpdate="2014-09-18 04:52:59" upgradeLevel="4" numberOfPins="12" />
+      <row solarSystemID="31000090" solarSystemName="New Eden" planetID="95255216" planetName="New Eden III" planetTypeID="2015" planetTypeName="Planet (Lava)" ownerID="98678321" ownerName="Bobby McBlueShoot" lastUpdate="2014-09-18 04:48:32" upgradeLevel="5" numberOfPins="13" />
+      <row solarSystemID="31000090" solarSystemName="New Eden" planetID="95255225" planetName="New Eden IX" planetTypeID="13" planetTypeName="Planet (Gas)" ownerID="98678321" ownerName="Bobby McBlueShoot" lastUpdate="2014-09-18 04:45:15" upgradeLevel="5" numberOfPins="13" />
+      <row solarSystemID="31000090" solarSystemName="New Eden" planetID="95255229" planetName="New Eden X" planetTypeID="2017" planetTypeName="Planet (Storm)" ownerID="98678321" ownerName="Bobby McBlueShoot" lastUpdate="2014-09-18 04:49:00" upgradeLevel="5" numberOfPins="14" />
+      <row solarSystemID="31000090" solarSystemName="New Eden" planetID="95255238" planetName="New Eden XII" planetTypeID="2014" planetTypeName="Planet (Oceanic)" ownerID="98678321" ownerName="Bobby McBlueShoot" lastUpdate="2014-09-18 04:41:40" upgradeLevel="5" numberOfPins="14" />
+    </rowset>
+  </result>
+  <cachedUntil>2014-09-18 18:31:09</cachedUntil>
+</eveapi>
