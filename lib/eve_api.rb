@@ -13,6 +13,8 @@ class EveApi
     self.key_id = new_key_id
     self.vcode = new_vcode
 
-    raise "Capsuleer#initialize: missing args" unless [capsuleer_id, key_id, vcode].all?
+    unless [capsuleer_id, key_id, vcode].all?
+      raise ArgumentError.new('api keys required') 
+    end
   end
 end

@@ -5,7 +5,9 @@ class Capsuleer
     self.id = new_eve_api.capsuleer_id
     self.eve_api = new_eve_api
 
-    raise "Capsuleer#initialize: missing args" unless [id, new_eve_api].all?
+    unless [id, new_eve_api].all?
+      raise ArgumentError.new('api data required')  
+    end
 
     base_path = "https://api.eveonline.com/char/PlanetaryColonies.xml.aspx"
     self.url = "#{base_path}?characterID=#{id}&keyID=#{eve_api.key_id}" + 
