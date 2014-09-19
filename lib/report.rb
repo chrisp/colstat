@@ -17,14 +17,17 @@ class Report
     report_text = "" 
     capsuleers.each do |capsuleer|
       report_text += "#{capsuleer.name}\n"
-      report_text += "Colony\t\tProducts\n"
+      report_text += "Colony\t\tType\tProducts\n"
       capsuleer.colonies.each do |colony|
-        report_text += "#{colony.name}\t"
+
+        report_text += "#{colony.name}\t#{colony.type.sub("Temperate", "Temp")}\t"
 
         pins = colony.pin_data.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
-        pins.each { |pin| report_text += "#{planet_schematic.name_for_id(pin)}\t" }
-        
-        report_text += "\n"
+        pins.each_with_index do |pin,i| 
+          report_text += "\t\t\t" if i > 0
+
+          report_text += "#{planet_schematic.name_for_id(pin)}\n" 
+        end
       end
 
       report_text += "============================================\n"

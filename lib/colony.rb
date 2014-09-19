@@ -1,6 +1,7 @@
 class Colony
   attr_accessor :id, 
                 :name, 
+                :type,
                 :eve_api, 
                 :response, 
                 :url, 
@@ -11,6 +12,7 @@ class Colony
   def initialize(colony, new_eve_api)
     self.id = colony['planetID'] 
     self.name = colony['planetName']
+    self.type = colony['planetTypeName'].match(/\((.*)\)/)[1]
     self.eve_api = new_eve_api
 
     base_url = "https://api.eveonline.com"
