@@ -6,6 +6,6 @@ class PlanetSchematic
 
   def name_for_id(schem_id)
     eve_db.db.execute(
-      "select schematicName from planetSchematics where schematicID=#{schem_id}")[0][0]
+      "select schematicName from planetSchematics where schematicID=#{schem_id.to_i}")[0][0]
   end
 end
