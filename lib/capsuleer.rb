@@ -29,8 +29,10 @@ class Capsuleer
         colonies << Colony.new(colony, eve_api)
       end
     else
-      self.name = colony_data['ownerName']
-      colonies << Colony.new(colony_data, eve_api)
+      if colony_data
+        self.name = colony_data['ownerName']
+        colonies << Colony.new(colony_data, eve_api)
+      end
     end
 
     self

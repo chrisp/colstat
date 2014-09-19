@@ -2,7 +2,6 @@ class Report
   attr_reader :capsuleers,
               :planet_schematic
               
-
   def initialize(keys = 'keys.yml')
     @capsuleers = []
     keys = YAML.load_file(keys)
