@@ -2,7 +2,10 @@ libdir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
 specdir = File.expand_path(File.dirname(__FILE__))
 require 'crack'
 require 'httparty'
+require 'sqlite3'
 require "#{libdir}/eve_api"
+require "#{libdir}/eve_db"
+require "#{libdir}/planet_schematic"
 require "#{libdir}/capsuleer"
 require "#{libdir}/colony"
 require "#{libdir}/report"

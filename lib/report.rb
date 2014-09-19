@@ -1,5 +1,7 @@
 class Report
-  attr_reader :capsuleers
+  attr_reader :capsuleers,
+              :planet_schematic
+              
 
   def initialize(keys = 'keys.yml')
     @capsuleers = []
@@ -8,6 +10,8 @@ class Report
     keys.each do |key|
       @capsuleers << Capsuleer.new(EveApi.new(key['id'], key['key_id'], key['vcode']))
     end
+
+    @planet_schematic = PlanetSchematic.new(EveDb.new)
   end
 
   def products_by_colony
@@ -19,7 +23,7 @@ class Report
         report_text += "#{colony.name}\t"
 
         pins = colony.pin_data.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
-        pins.each { |pin| report_text += "#{pin}\t" }
+        pins.each { |pin| report_text += "#{planet_schematic.name_for_id(pin)}\t" }
         
         report_text += "\n"
       end
