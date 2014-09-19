@@ -34,4 +34,8 @@ class Colony
     self.response = EveApi.get(url)
     self.route_data = response["eveapi"]["result"]["rowset"]["row"]
   end
+
+  def short_type
+    type.sub("Temperate", "Temp")
+  end
 end

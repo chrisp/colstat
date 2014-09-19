@@ -20,7 +20,7 @@ class Report
       report_text += "Colony\t\tType\tProducts\n"
       capsuleer.colonies.each do |colony|
 
-        report_text += "#{colony.name}\t#{colony.type.sub("Temperate", "Temp")}\t"
+        report_text += "#{colony.name}\t#{colony.short_type}\t"
 
         pins = colony.pin_data.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
         pins.each_with_index do |pin,i| 
