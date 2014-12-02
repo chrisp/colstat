@@ -28,14 +28,16 @@ class Report
     end
   end
 
-  def products_by_colony
-    collect_data
+  def products_by_colony(options={})
+    collect_data # always get all data
     report_text = "" 
 
     capsuleers.each do |capsuleer|
+      next if options.has_key?(:capsuleer) && options[:capsuleer] != capsuleer.name
       report_text += "#{capsuleer.name}\n"
       report_text += "Colony\t\tType\tProducts\n"
       capsuleer.colonies.each do |colony|
+        next if options.has_key?(:planet) && options[:planet] != colony.name
         report_text += "#{colony.name}\t#{colony.short_type}\t"
 
         pins = colony.pin_data.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
