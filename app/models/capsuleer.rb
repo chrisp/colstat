@@ -1,23 +1,32 @@
 class Capsuleer
-  attr_accessor :id, :name
+  attr_accessor :id, 
+                :name, 
+                :colonies
 
   private
-  attr_accessor :resource, :map
+  attr_accessor :resource, 
+                :mapper
 
+  public
   def initialize(init_resource)
     self.resource = init_resource
+    self.id = resource.id
+    self.name = resource.name
+    map_colonies
+    save_map
   end
 
-  def colonies
-    resource.colonies
+  def save_map
+    self.mapper = CapsuleerMap.new(
+                               resource_id: id,
+                               name: name)
+    mapper.save!
   end
 
-  def id
-    resource.id
-  end
-  
-  def name
-    resource.name
+  def map_colonies
+    self.colonies = resource.colony_resources.map do |colony_resource|
+      Colony.new(colony_resource)
+    end
   end
 
   def self.retreive(api)

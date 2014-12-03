@@ -4,7 +4,7 @@ class CapsuleerResource
                 :colony_data,
                 :response,
                 :url,
-                :colonies,
+                :colony_resources,
                 :name
 
   def initialize(new_eve_api)
@@ -21,17 +21,17 @@ class CapsuleerResource
     self.response = EveApi.get(url)
 
     self.colony_data = response["eveapi"]["result"]["rowset"]["row"]
-    self.colonies = []
+    self.colony_resources = []
 
     if colony_data.is_a?(Array)
       self.name = colony_data[0]['ownerName']
       colony_data.each do |colony|
-        colonies << Colony.new(colony, eve_api)
+        colony_resources << ColonyResource.new(colony, eve_api)
       end
     else
       if colony_data
         self.name = colony_data['ownerName']
-        colonies << Colony.new(colony_data, eve_api)
+        colony_resources << ColonyResource.new(colony_data, eve_api)
       end
     end
 

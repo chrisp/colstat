@@ -1,4 +1,4 @@
-class Colony
+class ColonyResource
   attr_accessor :id, 
                 :name, 
                 :type,
@@ -33,9 +33,5 @@ class Colony
       "&keyID=#{eve_api.key_id}&vCode=#{eve_api.vcode}&planetID=#{id}"
     self.response = EveApi.get(url)
     self.route_data = response["eveapi"]["result"]["rowset"]["row"]
-  end
-
-  def short_type
-    type.sub("Temperate", "Temp")
   end
 end

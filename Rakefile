@@ -8,7 +8,11 @@ rescue LoadError
 end
 
 task :default => :build
-task :build => ['db:migrate', :spec]
+task :build => [
+     'db:drop',
+     'db:migrate',
+     :spec
+     ]
 
 namespace :db do
   task :environment do

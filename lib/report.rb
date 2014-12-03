@@ -21,7 +21,7 @@ class Report
     capsuleers.each do |capsuleer|
       capsuleer.colonies.each do |colony|
 
-        pins = colony.pin_data.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
+        pins = colony.facilities.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
         pins.each_with_index do |pin,i|
           self.planet_schematics[pin] = PlanetSchematic.new(pin, eve_db)
         end
@@ -41,7 +41,7 @@ class Report
         next if options.has_key?(:planet) && options[:planet] != colony.name
         report_text += "#{colony.name}\t#{colony.short_type}\t"
 
-        pins = colony.pin_data.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
+        pins = colony.facilities.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
         pins.each_with_index do |pin,i|
           report_text += "\t\t\t" if i > 0
 
