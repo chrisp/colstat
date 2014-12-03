@@ -2,8 +2,8 @@ require 'rspec'
 specdir = File.expand_path(File.dirname(__FILE__))
 require "#{specdir}/spec_helper"
 
-describe PlanetSchematic do
-  subject { PlanetSchematic.new(76, EveDb.new) }
+describe PlanetSchematicResource do
+  subject { PlanetSchematicResource.new(76, EveDb.new) }
 
   describe '#new' do
     it 'initializes with an eve db connection' do

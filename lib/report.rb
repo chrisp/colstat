@@ -23,7 +23,7 @@ class Report
 
         pins = colony.facilities.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
         pins.each_with_index do |pin,i|
-          self.planet_schematics[pin] = PlanetSchematic.new(pin, eve_db)
+          self.planet_schematics[pin] = PlanetSchematic.retrieve(pin, eve_db)
         end
       end
     end
@@ -46,7 +46,7 @@ class Report
           report_text += "\t\t\t" if i > 0
 
           # TODO relate schem to pins/colonies
-          planet_schematic = PlanetSchematic.new(pin, eve_db)
+          planet_schematic = PlanetSchematic.retrieve(pin, eve_db)
           report_text += "#{planet_schematic.name} (#{pin})"
 
           if !(planet_schematic.inputs.empty? ||

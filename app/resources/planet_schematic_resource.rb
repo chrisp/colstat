@@ -1,4 +1,4 @@
-class PlanetSchematic
+class PlanetSchematicResource
   attr_accessor :eve_db,
                 :inputs,
                 :id,
@@ -18,7 +18,7 @@ class PlanetSchematic
                                    "select planetSchematics.schematicID,typeName from planetSchematicsTypeMap join InvTypes on planetSchematicsTypeMap.typeID=InvTypes.typeID join planetSchematics on planetSchematics.schematicName=typeName where planetSchematicsTypeMap.schematicID=#{schem_id} and isInput=1;")
 
     input_schematics.collect do |input_schematic|
-      PlanetSchematic.new(input_schematic[0], eve_db)
+      PlanetSchematicResource.new(input_schematic[0], eve_db)
     end
   end
 

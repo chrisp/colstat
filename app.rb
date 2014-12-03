@@ -13,15 +13,16 @@ require 'active_record'
 libdir = File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
 require "#{libdir}/eve_api"
 require "#{libdir}/eve_db"
-require "#{libdir}/planet_schematic"
 require "#{libdir}/report"
 
 appdir = File.expand_path(File.join(File.dirname(__FILE__), 'app'))
 require "#{appdir}/maps/capsuleer_map"
 require "#{appdir}/resources/capsuleer_resource"
 require "#{appdir}/resources/colony_resource"
+require "#{appdir}/resources/planet_schematic_resource"
 require "#{appdir}/models/capsuleer"
 require "#{appdir}/models/colony"
+require "#{appdir}/models/planet_schematic"
 
 def setup_active_record
   ActiveRecord::Base.logger = Logger.new(File.join(APP_ROOT, 'debug.log'))
