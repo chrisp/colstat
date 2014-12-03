@@ -6,12 +6,6 @@ require 'crack'
 require 'httparty'
 require 'sqlite3'
 require "#{rootdir}/app"
-require "#{libdir}/eve_api"
-require "#{libdir}/eve_db"
-require "#{libdir}/planet_schematic"
-require "#{libdir}/capsuleer"
-require "#{libdir}/colony"
-require "#{libdir}/report"
 require 'pry'
 require 'webmock/rspec'
 

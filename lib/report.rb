@@ -8,7 +8,8 @@ class Report
     keys = YAML.load_file(keys)
 
     keys.each do |key|
-      @capsuleers << Capsuleer.new(EveApi.new(key['id'], key['key_id'], key['vcode']))
+      api = EveApi.new(key['id'], key['key_id'], key['vcode'])
+      @capsuleers << Capsuleer.retreive(api)
     end
 
     @eve_db = EveDb.new

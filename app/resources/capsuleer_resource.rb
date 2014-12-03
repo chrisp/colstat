@@ -1,9 +1,9 @@
-class Capsuleer
-  attr_accessor :id, 
-                :eve_api, 
-                :colony_data, 
-                :response, 
-                :url, 
+class CapsuleerResource
+  attr_accessor :id,
+                :eve_api,
+                :colony_data,
+                :response,
+                :url,
                 :colonies,
                 :name
 
@@ -12,11 +12,11 @@ class Capsuleer
     self.eve_api = new_eve_api
 
     unless [id, new_eve_api].all?
-      raise ArgumentError.new('api data required')  
+      raise ArgumentError.new('api data required')
     end
 
     base_url = "https://api.eveonline.com/char/PlanetaryColonies.xml.aspx"
-    self.url = "#{base_url}?characterID=#{id}&keyID=#{eve_api.key_id}" + 
+    self.url = "#{base_url}?characterID=#{id}&keyID=#{eve_api.key_id}" +
       "&vCode=#{eve_api.vcode}"
     self.response = EveApi.get(url)
 

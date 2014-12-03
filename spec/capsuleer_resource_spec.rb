@@ -2,12 +2,12 @@ require 'rspec'
 specdir = File.expand_path(File.dirname(__FILE__))
 require "#{specdir}/spec_helper"
 
-describe Capsuleer do
+describe CapsuleerResource do
   describe '#new' do
+    subject { CapsuleerResource.new(eve_api) }
     it 'should initialize colony data for passed api data' do
-      capsuleer = Capsuleer.new(eve_api)
-      expect(capsuleer.colonies).to_not be_nil
-      expect(capsuleer.colonies).to_not be_empty
+      expect(subject.colonies).to_not be_nil
+      expect(subject.colonies).to_not be_empty
     end 
   end
 end
