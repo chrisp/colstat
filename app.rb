@@ -17,12 +17,15 @@ require "#{libdir}/report"
 
 appdir = File.expand_path(File.join(File.dirname(__FILE__), 'app'))
 require "#{appdir}/maps/capsuleer_map"
+require "#{appdir}/maps/planet_schematic_map"
 require "#{appdir}/resources/capsuleer_resource"
 require "#{appdir}/resources/colony_resource"
 require "#{appdir}/resources/planet_schematic_resource"
+require "#{appdir}/models/model"
 require "#{appdir}/models/capsuleer"
 require "#{appdir}/models/colony"
 require "#{appdir}/models/planet_schematic"
+
 
 def setup_active_record
   ActiveRecord::Base.logger = Logger.new(File.join(APP_ROOT, 'debug.log'))

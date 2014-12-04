@@ -8,7 +8,14 @@ class Schema < ActiveRecord::Migration
 
     create_table :colonies, force: true do |t|
       t.integer :resource_id
-      t.belongs_to :capsuleer_map
+      t.belongs_to :capsuleers
+      t.string  :name
+      t.timestamps
+    end
+
+    create_table :planet_schematics, force: true do |t|
+      t.integer :resource_id
+      t.belongs_to :colonies
       t.string  :name
       t.timestamps
     end
