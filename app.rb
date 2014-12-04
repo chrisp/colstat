@@ -21,10 +21,10 @@ require "#{appdir}/maps/planet_schematic_map"
 require "#{appdir}/resources/capsuleer_resource"
 require "#{appdir}/resources/colony_resource"
 require "#{appdir}/resources/planet_schematic_resource"
-require "#{appdir}/models/model"
-require "#{appdir}/models/capsuleer"
-require "#{appdir}/models/colony"
-require "#{appdir}/models/planet_schematic"
+require "#{appdir}/entities/entity"
+require "#{appdir}/entities/capsuleer"
+require "#{appdir}/entities/colony"
+require "#{appdir}/entities/planet_schematic"
 
 
 def setup_active_record
