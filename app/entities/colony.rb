@@ -1,4 +1,4 @@
-class Entity::Colony < Entity::ResourceModel
+class Entity::Colony
   attr_accessor :id,
                 :name,
                 :type,
@@ -15,6 +15,14 @@ class Entity::Colony < Entity::ResourceModel
     self.name = resource.name
     self.type = resource.type
     self.facilities = resource.pin_data
+    save_map
+  end
+
+  def save_map
+    self.mapper = ColonyMap.new(
+                                resource_id: id,
+                                name: name)
+    mapper.save!
   end
 
   def short_type

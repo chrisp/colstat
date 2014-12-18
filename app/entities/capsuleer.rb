@@ -1,7 +1,11 @@
-class Entity::Capsuleer < Entity::ResourceModel
+class Entity::Capsuleer
   attr_accessor :id,
                 :name,
                 :colonies
+
+  private
+  attr_accessor :resource,
+                :mapper
 
   def initialize(init_resource)
     self.resource = init_resource

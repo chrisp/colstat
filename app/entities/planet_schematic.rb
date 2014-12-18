@@ -1,8 +1,13 @@
-class Entity::PlanetSchematic < Entity::ResourceModel
+class Entity::PlanetSchematic
   attr_accessor :id,
                 :name,
                 :inputs
 
+  private
+  attr_accessor :resource,
+                :mapper
+
+  public
   def initialize(init_resource)
     self.resource = init_resource
     self.id = resource.id

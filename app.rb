@@ -17,6 +17,7 @@ require "#{libdir}/report"
 
 appdir = File.expand_path(File.join(File.dirname(__FILE__), 'app'))
 require "#{appdir}/maps/capsuleer_map"
+require "#{appdir}/maps/colony_map"
 require "#{appdir}/maps/planet_schematic_map"
 require "#{appdir}/resources/capsuleer_resource"
 require "#{appdir}/resources/colony_resource"
@@ -35,7 +36,12 @@ end
 
 def run_report(options)
   report = Report.new
-  report.products_by_colony(options)
+
+  if options.has_key?(:inputs_only)
+    report.inputs_by_colony(options)
+  else
+    report.products_by_colony(options)
+  end
 end
 
 setup_active_record

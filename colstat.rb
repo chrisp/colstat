@@ -10,6 +10,18 @@ OptionParser.new do |opts|
     options[:planet] = v
   end
 
+  opts.on('-i',
+          '--inputs-only',
+          'only display required inputs') do |v|
+    options[:inputs_only] = v
+  end
+
+  opts.on('-s',
+          '--system SYSTEM',
+          'report for system') do |v|
+    options[:system] = v
+  end
+
   opts.on('-c',
           '--capsuleer CAPSULEER',
           'report for capsuleer') do |v|
