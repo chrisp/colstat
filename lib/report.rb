@@ -62,11 +62,7 @@ class Report
         planet_inputs[capsuleer.name][colony.name].each do |name, count|
           report_text += "#{name} [#{count} - #{count*300}]\n"
         end
-
-        report_text += "\n"
       end
-
-      report_text += "\n"
     end
 
     report_text
