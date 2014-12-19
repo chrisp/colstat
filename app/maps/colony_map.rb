@@ -1,5 +1,3 @@
-class ColonyMap < ActiveRecord::Base
-  self.table_name = :colonies
-
-  belongs_to :capsuleer_map
+class Colony < ActiveRecord::Base
+  belongs_to :capsuleer
 end

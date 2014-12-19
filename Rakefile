@@ -37,6 +37,10 @@ namespace :db do
 
   desc 'Remove the database'
   task :drop => :configuration do
-    FileUtils.rm @config['database']
+    begin
+      FileUtils.rm @config['database']
+    rescue Errno::ENOENT => e
+      puts e.message
+    end
   end
 end

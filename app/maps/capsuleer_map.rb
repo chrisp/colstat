@@ -1,5 +1,3 @@
-class CapsuleerMap < ActiveRecord::Base
-  self.table_name = :capsuleers
-
-  has_many :colony_maps
+class Capsuleer < ActiveRecord::Base
+  has_many :colonies
 end
