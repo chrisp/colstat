@@ -17,13 +17,15 @@ class Entity::PlanetSchematic
   end
 
   def save_map
-    self.mapper = PlanetSchematicMap.new(
-                                         resource_id: id,
-                                         name: name)
+    self.mapper = ::PlanetSchematic.
+      new(
+          resource_id: id,
+          name: name)
     mapper.save!
   end
 
   def self.retrieve(pin, eve_db)
-    new(PlanetSchematicResource.new(pin, eve_db))
+    new(PlanetSchematicResource.
+        new(pin, eve_db))
   end
 end

@@ -1,6 +1,10 @@
 class EveApi
   include HTTParty
-  attr_accessor :capsuleer_id, :key_id, :vcode, :url, :response
+  attr_accessor :capsuleer_id,
+                :key_id,
+                :vcode,
+                :url,
+                :response
 
   parser(
     Proc.new do |body, format|
@@ -14,7 +18,7 @@ class EveApi
     self.vcode = new_vcode
 
     unless [capsuleer_id, key_id, vcode].all?
-      raise ArgumentError.new('api keys required') 
+      raise ArgumentError.new('api keys required')
     end
   end
 end

@@ -12,11 +12,14 @@ class CapsuleerResource
     self.eve_api = new_eve_api
 
     unless [id, new_eve_api].all?
-      raise ArgumentError.new('api data required')
+      raise ArgumentError.
+        new('api data required')
     end
 
-    base_url = "https://api.eveonline.com/char/PlanetaryColonies.xml.aspx"
-    self.url = "#{base_url}?characterID=#{id}&keyID=#{eve_api.key_id}" +
+    api_url = "https://api.eveonline.com"
+    base_url = "#{api_url}/char/PlanetaryColonies.xml.aspx"
+    self.url = "#{base_url}?characterID=#{id}" +
+      "&keyID=#{eve_api.key_id}" +
       "&vCode=#{eve_api.vcode}"
     self.response = EveApi.get(url)
 
@@ -26,12 +29,14 @@ class CapsuleerResource
     if colony_data.is_a?(Array)
       self.name = colony_data[0]['ownerName']
       colony_data.each do |colony|
-        colony_resources << ColonyResource.new(colony, eve_api)
+        colony_resources <<
+          ColonyResource.new(colony, eve_api)
       end
     else
       if colony_data
         self.name = colony_data['ownerName']
-        colony_resources << ColonyResource.new(colony_data, eve_api)
+        colony_resources <<
+          ColonyResource.new(colony_data, eve_api)
       end
     end
 

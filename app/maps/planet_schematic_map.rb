@@ -1,3 +1,2 @@
-class PlanetSchematicMap < ActiveRecord::Base
-  self.table_name = :planet_schematics
+class PlanetSchematic < ActiveRecord::Base
 end

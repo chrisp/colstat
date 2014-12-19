@@ -33,8 +33,10 @@ class Entity::Capsuleer
     self.id = mapper.resource_id
     self.name = mapper.name
 
-    self.colonies = mapper.colonies.map do |colony_map|
-      Entity::Colony.new(mapper: colony_map)
+    self.colonies = mapper.colonies.
+      map do |colony_map|
+      Entity::Colony.
+        new(mapper: colony_map)
     end
   end
 
@@ -45,13 +47,18 @@ class Entity::Capsuleer
           name: name)
     mapper.save!
 
-    self.colonies = resource.colony_resources.map do |colony_resource|
-      Entity::Colony.new(resource: colony_resource, capsuleer: self)
+    self.colonies = resource.colony_resources.
+      map do |colony_resource|
+      Entity::Colony.
+        new(
+            resource: colony_resource,
+            capsuleer: self)
     end
   end
 
   def self.retreive(api)
-    capsuleer_map = ::Capsuleer.where(resource_id: api.capsuleer_id).first
+    capsuleer_map = ::Capsuleer.
+      where(resource_id: api.capsuleer_id).first
 
     if capsuleer_map.blank?
       new(resource: CapsuleerResource.new(api))

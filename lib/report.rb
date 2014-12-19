@@ -12,7 +12,10 @@ class Report
     keys = YAML.load_file(keys)
 
     keys.each do |key|
-      api = EveApi.new(key['id'], key['key_id'], key['vcode'])
+      api = EveApi.new(
+                       key['id'],
+                       key['key_id'],
+                       key['vcode'])
       @capsuleers << Entity::Capsuleer.retreive(api)
       print '.'
     end
@@ -30,15 +33,23 @@ class Report
     capsuleers.each do |capsuleer|
       self.planet_inputs[capsuleer.name] = {}
       capsuleer.colonies.each do |colony|
-        next if options.has_key?(:system) && !colony.name.upcase.include?(options[:system].upcase)
+        next if options.has_key?(:system) &&
+          !colony.name.upcase.include?(options[:system].upcase)
         self.planet_inputs[capsuleer.name][colony.name] = Hash.new(0)
 
-        pins = colony.facilities.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}
+        pins = colony.facilities.map do |p|
+          p['schematicID']
+        end.reject do |pin|
+          pin.to_i == 0
+        end
+
         pins.each do |pin|
           self.planet_schematics[pin] = Entity::PlanetSchematic.retrieve(pin, eve_db)
           self.outputs[planet_schematics[pin].name] += 1
 
-          planet_schematics[pin].inputs.uniq {|i| i.name}.each do |input|
+          planet_schematics[pin].inputs.uniq do |i|
+            i.name
+          end.each do |input|
             self.inputs[input.name] += 1
             self.planet_inputs[capsuleer.name][colony.name][input.name] += 1
           end
@@ -52,12 +63,15 @@ class Report
     report_text = ""
 
     capsuleers.each do |capsuleer|
-      next if options.has_key?(:capsuleer) && options[:capsuleer] != capsuleer.name
+      next if options.has_key?(:capsuleer) &&
+        options[:capsuleer] != capsuleer.name
       report_text += "#{capsuleer.name}\n"
 
       capsuleer.colonies.each do |colony|
-        next if options.has_key?(:planet) && options[:planet] != colony.name
-        next if options.has_key?(:system) && !colony.name.upcase.include?(options[:system].upcase)
+        next if options.has_key?(:planet) &&
+          options[:planet] != colony.name
+        next if options.has_key?(:system) &&
+          !colony.name.upcase.include?(options[:system].upcase)
         report_text += "#{colony.name}\t#{colony.short_type}\t\n"
 
         planet_inputs[capsuleer.name][colony.name].each do |name, count|
@@ -74,15 +88,20 @@ class Report
     report_text = ""
 
     capsuleers.each do |capsuleer|
-      next if options.has_key?(:capsuleer) && options[:capsuleer] != capsuleer.name
+      next if options.has_key?(:capsuleer) &&
+        options[:capsuleer] != capsuleer.name
       report_text += "#{capsuleer.name}\n"
       report_text += "Colony\t\tType\tProducts\n"
       capsuleer.colonies.each do |colony|
-        next if options.has_key?(:planet) && options[:planet] != colony.name
-        next if options.has_key?(:system) && !colony.name.upcase.include?(options[:system].upcase)
+        next if options.has_key?(:planet) &&
+          options[:planet] != colony.name
+        next if options.has_key?(:system) &&
+          !colony.name.upcase.include?(options[:system].upcase)
         report_text += "#{colony.name}\t#{colony.short_type}\t"
 
-        pins = colony.facilities.map {|p| p['schematicID']}.reject {|pin| pin.to_i == 0}.uniq
+        pins = colony.facilities.map do |p|
+          p['schematicID']
+        end.reject {|pin| pin.to_i == 0}.uniq
         pins.each_with_index do |pin,i|
           report_text += "\t\t\t" if i > 0
 

@@ -43,16 +43,18 @@ class Entity::Colony
     self.name = mapper.name
     self.type = mapper.colony_type
     self.capsuleer = mapper.capsuleer
-    self.facilities = JSON::parse(mapper.facilities)
+    self.facilities =
+      JSON::parse(mapper.facilities)
   end
 
   def save_map
-    self.mapper = ::Colony.new(
-                               resource_id: id,
-                               capsuleer: capsuleer.mapper,
-                               name: name,
-                               colony_type: type,
-                               facilities: facilities.to_json)
+    self.mapper = ::Colony.
+      new(
+          resource_id: id,
+          capsuleer: capsuleer.mapper,
+          name: name,
+          colony_type: type,
+          facilities: facilities.to_json)
     mapper.save!
   end
 
