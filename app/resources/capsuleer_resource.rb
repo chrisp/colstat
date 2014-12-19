@@ -3,6 +3,7 @@ class CapsuleerResource
                 :eve_api,
                 :colony_data,
                 :response,
+                :base_url,
                 :url,
                 :colony_resources,
                 :name
@@ -17,7 +18,13 @@ class CapsuleerResource
     end
 
     api_url = "https://api.eveonline.com"
-    base_url = "#{api_url}/char/PlanetaryColonies.xml.aspx"
+    self.base_url = "#{api_url}/char/PlanetaryColonies.xml.aspx"
+    init_colony_data
+    map_colonies
+  end
+
+  private
+  def init_colony_data
     self.url = "#{base_url}?characterID=#{id}" +
       "&keyID=#{eve_api.key_id}" +
       "&vCode=#{eve_api.vcode}"
@@ -25,7 +32,9 @@ class CapsuleerResource
 
     self.colony_data = response["eveapi"]["result"]["rowset"]["row"]
     self.colony_resources = []
+  end
 
+  def map_colonies
     if colony_data.is_a?(Array)
       self.name = colony_data[0]['ownerName']
       colony_data.each do |colony|
@@ -39,7 +48,5 @@ class CapsuleerResource
           ColonyResource.new(colony_data, eve_api)
       end
     end
-
-    self
   end
 end

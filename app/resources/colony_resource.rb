@@ -14,9 +14,9 @@ class ColonyResource
     self.base_url = "https://api.eveonline.com"
     self.eve_api = new_eve_api
     init_colony_data(colony)
-    init_pin_data(eve_api)
-    init_link_data(eve_api)
-    init_route_data(eve_api)
+    init_pin_data
+    init_link_data
+    init_route_data
   end
 
   private
@@ -26,7 +26,7 @@ class ColonyResource
     self.type = colony['planetTypeName'].match(/\((.*)\)/)[1]
   end
 
-  def init_pin_data(eve_api)
+  def init_pin_data
     path = "char/PlanetaryPins.xml.aspx"
     self.url = "#{base_url}/#{path}?" +
       "characterID=#{eve_api.capsuleer_id}" +
@@ -36,7 +36,7 @@ class ColonyResource
     self.pin_data = response["eveapi"]["result"]["rowset"]["row"]
   end
 
-  def init_link_data(eve_api)
+  def init_link_data
     path = 'char/PlanetaryLinks.xml.aspx'
     self.url = "#{base_url}/#{path}?" +
       "characterID=#{eve_api.capsuleer_id}" +
@@ -46,7 +46,7 @@ class ColonyResource
     self.link_data = response["eveapi"]["result"]["rowset"]["row"]
   end
 
-  def init_route_data(eve_api)
+  def init_route_data
     path = 'char/PlanetaryRoutes.xml.aspx'
     self.url = "#{base_url}/#{path}?" +
       "characterID=#{eve_api.capsuleer_id}" +
