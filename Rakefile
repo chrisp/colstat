@@ -24,6 +24,9 @@ namespace :db do
     @config = YAML.load_file('config/database.yml')[DATABASE_ENV]
   end
 
+  desc 'Rebuild an empty database'
+  task :reset => ['db:drop', 'db:migrate']
+
   desc 'Migrate the database (options: VERSION=x, VERBOSE=false).'
   task :migrate => :configure_connection do
     ActiveRecord::Migration.verbose = true

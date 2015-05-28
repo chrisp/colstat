@@ -47,7 +47,8 @@ def run_report(options)
   if options.has_key?(:inputs_only)
     report.inputs_by_colony(options)
   else
-    report.products_by_colony(options)
+    report.products_by_colony(options) +
+    report.inputs_and_outputs
   end
 end
 

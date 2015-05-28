@@ -57,9 +57,9 @@ class Entity::Capsuleer
   end
 
   def self.retreive(api)
-    capsuleer_map = ::Capsuleer.
+    capsuleer_map =
+      ::Capsuleer.
       where(resource_id: api.capsuleer_id).first
-
     if capsuleer_map.blank?
       new(resource: CapsuleerResource.new(api))
     else

@@ -18,7 +18,8 @@ class CapsuleerResource
     end
 
     api_url = "https://api.eveonline.com"
-    self.base_url = "#{api_url}/char/PlanetaryColonies.xml.aspx"
+    self.base_url = api_url +
+      "/char/PlanetaryColonies.xml.aspx"
     init_colony_data
     map_colonies
   end
@@ -28,9 +29,11 @@ class CapsuleerResource
     self.url = "#{base_url}?characterID=#{id}" +
       "&keyID=#{eve_api.key_id}" +
       "&vCode=#{eve_api.vcode}"
-    self.response = EveApi.get(url)
+    self.response = EveApi.
+      get(url)["eveapi"]
 
-    self.colony_data = response["eveapi"]["result"]["rowset"]["row"]
+    self.colony_data =
+      response["result"]["rowset"]["row"]
     self.colony_resources = []
   end
 

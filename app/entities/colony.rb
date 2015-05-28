@@ -65,4 +65,20 @@ class Entity::Colony
   def self.retrieve(api)
     new(ColonyResource.new(api))
   end
+
+  def unique_schematics_by_pin
+    facilities.uniq do |f|
+      f["pinID"]
+    end.map do |p|
+      p['schematicID']
+    end.reject do |pin|
+      pin.to_i == 0
+    end
+  end
+
+  def unique_schematics
+    facilities.map do |p|
+      p['schematicID']
+    end.reject {|pin| pin.to_i == 0}.uniq
+  end
 end

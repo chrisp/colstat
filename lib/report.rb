@@ -32,30 +32,32 @@ class Report
   def collect_data(options)
     capsuleers.each do |capsuleer|
       self.planet_inputs[capsuleer.name] = {}
+
       capsuleer.colonies.each do |colony|
         next if options.has_key?(:system) &&
           !colony.name.upcase.include?(options[:system].upcase)
         self.planet_inputs[capsuleer.name][colony.name] = Hash.new(0)
 
-        pins = colony.facilities.map do |p|
-          p['schematicID']
-        end.reject do |pin|
-          pin.to_i == 0
-        end
-
-        pins.each do |pin|
+        colony.unique_schematics_by_pin.each do |pin|
           self.planet_schematics[pin] = Entity::PlanetSchematic.retrieve(pin, eve_db)
           self.outputs[planet_schematics[pin].name] += 1
+          inputs = planet_schematics[pin].inputs.uniq do |input|
+            input.name
+          end
 
-          planet_schematics[pin].inputs.uniq do |i|
-            i.name
-          end.each do |input|
+          inputs.each do |input|
             self.inputs[input.name] += 1
             self.planet_inputs[capsuleer.name][colony.name][input.name] += 1
           end
         end
       end
     end
+  end
+
+  def inputs_for_capsuleer_colony(capsuleer, colony)
+    planet_inputs[capsuleer.name][colony.name].map do |name, count|
+      "#{name} [#{count*180}:#{count*300}:#{count*600}:#{count*900}]\n"
+    end.join
   end
 
   def inputs_by_colony(options={})
@@ -74,12 +76,45 @@ class Report
           !colony.name.upcase.include?(options[:system].upcase)
         report_text += "#{colony.name}\t#{colony.short_type}\t\n"
 
-        planet_inputs[capsuleer.name][colony.name].each do |name, count|
-          report_text += "#{name} [#{count} - #{count*300}]\n"
+        unless planet_inputs[capsuleer.name][colony.name].empty?
+          report_text += inputs_for_capsuleer_colony(capsuleer, colony)
+          report_text += "\n"
         end
       end
+
+      report_text += section_break
     end
 
+    report_text
+  end
+
+  def sorted_inputs
+    inputs.sort do |x,y|
+      y[1].to_f/outputs[y[0]].to_f <=> x[1].to_f/outputs[x[0]].to_f
+    end
+  end
+
+  def section_break
+    "===========================================================================\n"
+  end
+
+  def inputs_and_outputs
+    report_text = "Name\t\t\tInputs:Outputs\n"
+    sorted_inputs.each do |name, count|
+      tabs = 4 - (name.length/4).floor
+      if (count > outputs[name]) # applies to T2 mats
+        report_text += name.upcase
+      elsif (count > outputs[name]/2) # applies to T3+ mats
+        report_text += name.capitalize
+      else
+        report_text += name.downcase
+      end
+
+      tabs.times do
+        report_text += "\t"
+      end
+      report_text +="\t#{count}:#{outputs[name]} #{(count.to_f/outputs[name].to_f).round(2)}\n"
+    end
     report_text
   end
 
@@ -99,10 +134,7 @@ class Report
           !colony.name.upcase.include?(options[:system].upcase)
         report_text += "#{colony.name}\t#{colony.short_type}\t"
 
-        pins = colony.facilities.map do |p|
-          p['schematicID']
-        end.reject {|pin| pin.to_i == 0}.uniq
-        pins.each_with_index do |pin,i|
+        colony.unique_schematics.each_with_index do |pin,i|
           report_text += "\t\t\t" if i > 0
 
           # TODO relate schem to pins/colonies
@@ -112,31 +144,14 @@ class Report
 
         unless planet_inputs[capsuleer.name][colony.name].empty?
           report_text += "Inputs:\n"
-          planet_inputs[capsuleer.name][colony.name].each do |name, count|
-            report_text += "#{name} [#{count} - #{count*40} -  #{count*300}]\n"
-          end
+          report_text += inputs_for_capsuleer_colony(capsuleer, colony)
           report_text += "\n"
         end
       end
 
-      report_text +=
-"===========================================================================\n"
+      report_text += section_break
     end
 
-    report_text += "Name\t\t\tInputs:Outputs\n"
-    inputs.each do |name, count|
-      tabs = 4 - (name.length/4).floor
-      if (count/3 > outputs[name])
-        report_text += name.upcase
-      else
-        report_text += name
-      end
-
-      tabs.times do
-        report_text += "\t"
-      end
-      report_text +="\t#{count/3}:#{outputs[name]}\n"
-    end
     report_text
   end
 end
