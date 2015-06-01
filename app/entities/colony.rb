@@ -67,18 +67,32 @@ class Entity::Colony
   end
 
   def unique_schematics_by_pin
-    facilities.uniq do |f|
-      f["pinID"]
-    end.map do |p|
-      p['schematicID']
-    end.reject do |pin|
-      pin.to_i == 0
+    if has_factories?
+      facilities.uniq do |f|
+        f["pinID"]
+      end.map do |p|
+        p['schematicID']
+      end.reject do |pin|
+        pin.to_i == 0
+      end
+    else
+      []
     end
   end
 
   def unique_schematics
-    facilities.map do |p|
-      p['schematicID']
-    end.reject {|pin| pin.to_i == 0}.uniq
+    if has_factories?
+      facilities.map do |p|
+        p['schematicID']
+      end.reject {|pin| pin.to_i == 0}.uniq
+    else
+      []
+    end
+  end
+
+  def has_factories?
+    # facilities described as an array
+    # if there is no array there are no facilities
+    facilities.is_a?(Array)
   end
 end

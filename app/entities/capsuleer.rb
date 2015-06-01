@@ -37,7 +37,8 @@ class Entity::Capsuleer
       map do |colony_map|
       Entity::Colony.
         new(mapper: colony_map)
-    end
+    end ||
+      []
   end
 
   def save_map
