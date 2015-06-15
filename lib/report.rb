@@ -55,8 +55,11 @@ class Report
   end
 
   def inputs_for_capsuleer_colony(capsuleer, colony)
+    sprintf("%25s\n", "*180:*300:*600: *900") +
     planet_inputs[capsuleer.name][colony.name].map do |name, count|
-      "#{name} [#{count*180}:#{count*300}:#{count*600}:#{count*900}]\n"
+      sprintf("%25s  %-30s\n",
+              sprintf("%4s:%4s:%4s:%5s", count*180, count*300,count*600, count*900),
+              name)
     end.join
   end
 
@@ -73,44 +76,84 @@ class Report
     end
   end
 
+  def sorted_outputs
+    outputs.sort do |x,y|
+      [inputs[y[0]].to_f/y[1].to_f, x[0]] <=> [inputs[x[0]].to_f/x[1].to_f, y[0]]
+    end
+  end
+
   def section_break
     "===========================================================================\n"
   end
 
-  def inputs_and_outputs
-    report_text = "Name\t\t\tInputs:Outputs\n"
-    sorted_inputs.each do |name, count|
-      tabs = 4 - (name.length/4).floor
-      if (count > outputs[name]) # applies to T2 mats
-        report_text += name.upcase
-      elsif (count > outputs[name]/2) # applies to T3+ mats
-        report_text += name.capitalize
-      else
-        report_text += name.downcase
-      end
-
-      tabs.times do
-        report_text += "\t"
-      end
-      report_text +=
-        "\t#{count}:#{outputs[name]} " +
-        "#{(count.to_f/outputs[name].to_f).round(2)}\n"
+  def select_case_for(name)
+    if (inputs[name] > outputs[name]) # applies to T2 mats
+      name.upcase
+    elsif (inputs[name] > outputs[name]/2) # applies to T3+ mats
+      name.capitalize
+    else
+      name.downcase
     end
+  end
+
+  def deficiency_multiple_for(name)
+    @deficiency_of ||= {}
+    @deficiency_of[name] ||=
+      (inputs[name].to_f/outputs[name].to_f).round(2)
+  end
+
+  def colonies_needed_for(name)
+    if deficiency_multiple_for(name) > 1.4
+      (inputs[name].to_i - outputs[name].to_i) / 9
+    else
+      nil
+    end
+  end
+
+  def inputs_and_outputs
+    report_text = sprintf("%-25s %-15s %-10s %15s\n",
+                          'Name',
+                          'Inputs:Outputs',
+                          'Multiple',
+                          "Colonies Needed")
+
+    sorted_outputs.each do |name, output_count|
+      report_text +=
+        sprintf("%-25s %-15s %-10s %-15s\n",
+                select_case_for(name),
+                "#{inputs[name]}:#{outputs[name]}",
+                deficiency_multiple_for(name).to_s,
+                colonies_needed_for(name).to_s)
+    end
+
     report_text
   end
 
   def planet_schematic(pin)
-    planet_schematic = Entity::PlanetSchematic.
-      retrieve(pin, eve_db)
-    "#{planet_schematic.name} (#{pin})\n"
+    Entity::PlanetSchematic.retrieve(pin, eve_db).name
   end
 
   def products_for_capsuleer_colony(capsuleer, colony)
-    report_text = "#{colony.name}\t#{colony.short_type}\t"
+    report_text = ''
 
-    colony.unique_schematics.each_with_index do |pin,i|
-      report_text += "\t\t\t" if i > 0
-      report_text += planet_schematic(pin)
+    if colony.unique_schematics.blank?
+      report_text += sprintf("%-15s %-10s %-10s\n",
+                             colony.name,
+                             colony.short_type,
+                             '')
+    end
+
+    colony.unique_schematics.each_with_index do |pin, i|
+      if i == 0
+        pin = colony.unique_schematics.first
+        report_text += sprintf("%-15s %-10s %-10s\n",
+                               colony.name,
+                               colony.short_type,
+                               planet_schematic(pin))
+      else
+        report_text += sprintf("%-15s %-10s %-10s\n",
+                               '', '', planet_schematic(pin))
+      end
     end
 
     unless planet_inputs[capsuleer.name][colony.name].empty?
@@ -132,7 +175,10 @@ class Report
 
       report_text += "#{capsuleer.name}\n"
       unless options.has_key?(:inputs_only)
-        report_text += "Colony\t\tType\tProducts\n"
+        report_text += sprintf("%-15s %-10s %-15s\n",
+                               'Colony',
+                               'Type',
+                               'Products')
       end
 
       capsuleer.colonies.each do |colony|
