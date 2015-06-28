@@ -7,20 +7,9 @@ class Report
                 :outputs,
                 :inputs
 
-  def initialize(keys = 'keys.yml')
-    @capsuleers = []
-    keys = YAML.load_file(keys)
-
-    keys.each do |key|
-      api = EveApi.new(
-                       key['id'],
-                       key['key_id'],
-                       key['vcode'])
-      @capsuleers << Entity::Capsuleer.retreive(api)
-      print '.'
-    end
-    print "\n"
-
+  def initialize(keys = 'keys.yml', blueprints = 'blueprints.yml')
+    @capsuleers = Loader::Capsuleer.new(keys).load
+    @blueprints = Loader::Blueprint.new(blueprints).load
     @eve_db = EveDb.new
     @planet_schematics = {}
     @planet_inputs = {}

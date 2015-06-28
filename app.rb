@@ -10,24 +10,13 @@ require 'pry'
 require 'sqlite3'
 require 'optparse'
 require 'active_record'
+require 'require_all'
 
-libdir = File.join(APP_ROOT, 'lib')
-require "#{libdir}/eve_api"
-require "#{libdir}/eve_db"
-require "#{libdir}/report"
-
+require_all File.join(APP_ROOT, 'lib')
 appdir = File.join(APP_ROOT, 'app')
-require "#{appdir}/maps/capsuleer_map"
-require "#{appdir}/maps/colony_map"
-require "#{appdir}/maps/planet_schematic_map"
-require "#{appdir}/resources/capsuleer_resource"
-require "#{appdir}/resources/colony_resource"
-require "#{appdir}/resources/planet_schematic_resource"
-require "#{appdir}/entities/entity"
-require "#{appdir}/entities/capsuleer"
-require "#{appdir}/entities/colony"
-require "#{appdir}/entities/planet_schematic"
-
+require_all "#{appdir}/maps"
+require_all "#{appdir}/resources"
+require_all "#{appdir}/entities"
 
 def setup_active_record
   ActiveRecord::Base.logger = Logger.new(File.join(

@@ -16,7 +16,7 @@ describe Report do
     it 'should show all inputs required by colony' do
       result = subject.inputs_by_colony
       expect(result).
-        to(eql("Bobby McBlueShoot\nNew Eden I\tPlasma\t\nNew Eden III\tLava\t\nNew Eden IX\tGas\t\nNew Eden X\tStorm\t\nNew Eden XII\tOceanic\t\nToxic Metals [1 - 300]\nChiral Structures [1 - 300]\n"))
+        to(eql("Bobby McBlueShoot\nColony          Type       Products       \nNew Eden XII\tOceanic\t\n     *180:*300:*600: *900\n      180: 300: 600:  900  Toxic Metals                  \n      180: 300: 600:  900  Chiral Structures             \n\n===========================================================================\n"))
     end
   end
 
@@ -24,7 +24,7 @@ describe Report do
     it 'should show all products being produced for each colony' do
       result = subject.products_by_colony
       expect(result).
-        to(eql("Bobby McBlueShoot\nColony\t\tType\tProducts\nNew Eden I\tPlasma\tPrecious Metals (127)\nNew Eden III\tLava\tToxic Metals (128)\nNew Eden IX\tGas\tOxygen (124)\nNew Eden X\tStorm\tReactive Metals (126)\nNew Eden XII\tOceanic\tBacteria (131)\n\t\t\tConsumer Electronics (76)\nInputs:\nToxic Metals [1 - 40 -  300]\nChiral Structures [1 - 40 -  300]\n\n===========================================================================\nName\t\t\tInputs:Outputs\nToxic Metals\t\t0:10\nChiral Structures\t0:0\n"))
+        to(eql("Bobby McBlueShoot\nColony          Type       Products       \nNew Eden I      Plasma     Precious Metals\nNew Eden III    Lava       Toxic Metals\nNew Eden IX     Gas        Oxygen    \nNew Eden X      Storm      Reactive Metals\nNew Eden XII    Oceanic    Bacteria  \n                           Consumer Electronics\nInputs:\n     *180:*300:*600: *900\n      180: 300: 600:  900  Toxic Metals                  \n      180: 300: 600:  900  Chiral Structures             \n\n===========================================================================\n"))
     end
   end
 end
